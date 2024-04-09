@@ -12,7 +12,7 @@ function Sidebar({active}){
     }
     return(
         <div>
-                <div className=" p-4 h-screen border-r-[1px]">
+                <div className=" p-4 h-relative border-r-[1px] dark:text-neutral-400">
                 <div className={`text-xl font-bold flex items-center gap-3 overflow-hidden transition-all`}>
                     <button onClick={togglesidebar}><RxHamburgerMenu /></button>
                      <h1 className={`overflow-hidden transition all ${expanded ? "w-32" :"w-0"}`}>MusicPoint</h1>

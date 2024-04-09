@@ -1,10 +1,10 @@
-import { MdOutlineLightMode,MdDarkMode } from "react-icons/md";
+
 import { GoBell, GoBellFill } from "react-icons/go";
 import { CgProfile } from "react-icons/cg";
 import { useState } from "react";
 function RightSidebar(){
     return(
-        <div className="border-l-[1px] px-4 my-6 w-[300px]">
+        <div className="border-l-[1px] px-14  my-6 w-[100%]">
             <SideNavbar />
             <FollowArtist />
             <RecentPlay/>
@@ -14,18 +14,14 @@ function RightSidebar(){
 export default RightSidebar;
 
 function SideNavbar(){
-    const[darkMode,setdarkMode]=useState(false);
+    
     const[Notification,setNotification]=useState(false)
-    const toggledarkMode =()=>{
-        setdarkMode(!darkMode);
-    }
     const toggleNotification=()=>{
         setNotification(!Notification);
     }
     return(
-        <div>
+        <div className="dark:text-neutral-400">
             <div className=" flex justify-center items-center gap-12 mb-4 text-2xl">
-            <button onClick={toggledarkMode}>{darkMode ? <MdOutlineLightMode/> : <MdDarkMode />}</button>
             <button onClick={toggleNotification}>{Notification ? <GoBellFill/> : <GoBell/>}</button>
             <button><CgProfile/></button>
             </div>
@@ -49,7 +45,7 @@ function FollowArtist(){
         }
     ]
     return(
-        <div className={`border-b-[1px]`}>
+        <div className={`border-b-[1px] dark:text-white`}>
             <h1>Follow artist</h1>
             <div>
                 {artists.map((e)=>(
@@ -88,7 +84,7 @@ function RecentPlay(){
         }
     ]
     return(
-        <div>
+        <div className="dark:text-neutral-400">
             <div className="flex justify-between items-center">
             <h1>Recent Play</h1>
             <p>See All</p>
